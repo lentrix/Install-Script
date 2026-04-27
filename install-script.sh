@@ -78,6 +78,10 @@ systemctl restart apache2
 # Ensure PHP module is loaded in Apache
 a2enmod php 2>/dev/null || true
 
+# Install Microsoft VSCode via snap
+echo "📦 Installing Visual Studio Code..."
+sudo snap install --classic code
+
 # --------------------------------------------------
 # Brave Browser
 # --------------------------------------------------
