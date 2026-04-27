@@ -18,10 +18,10 @@ apt install -y software-properties-common curl wget unzip gnupg lsb-release ca-c
 # --------------------------------------------------
 echo "📦 Installing PHP 8.3..."
 
-#add-apt-repository -y ppa:ondrej/php
-#apt update -y
+add-apt-repository -y ppa:ondrej/php
+apt update -y
 
-apt install -y php php-cli php-mysql php-xml php-mbstring php-curl php-zip php-gd php-intl libapache2-mod-php
+apt install -y php8.3 php8.3-cli php8.3-fpm php8.3-mysql php8.3-xml php8.3-mbstring php8.3-curl php8.3-zip php8.3-gd php8.3-intl
 
 # Enable PHP module for Apache
 a2enmod php
