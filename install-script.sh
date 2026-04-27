@@ -78,9 +78,12 @@ systemctl restart apache2
 # Ensure PHP module is loaded in Apache
 a2enmod php 2>/dev/null || true
 
-# Install Microsoft VSCode via snap
+# Install Microsoft VSCode
 echo "📦 Installing Visual Studio Code..."
-snap install --classic code
+sudo apt update && sudo apt install -y wget gpg && \
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/ms-vscode.gpg > /dev/null && \
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ms-vscode.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null && \
+sudo apt update && sudo apt install -y code
 
 # --------------------------------------------------
 # Brave Browser
